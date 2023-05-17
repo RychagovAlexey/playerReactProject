@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
   font-family: -apple-system, BlinkMacSystemFont, 'Space Grotesk';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,4 +16,58 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#app {
+  background-color: #1B191C;
+  overflow: auto;
+}
+
+#header {
+  height: 490px;
+  background: #EEEEEE;
+  margin: 0.75rem;
+  display: flex;
+}
+.header-box {
+  display: flex;
+  align-items: center;
+  
+}
+.header-box__right {
+  margin-left: 2.5rem;
+
+}
+
+.header-box__right>h1 {
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: -1px;
+  width: 492px;
+  height: 156px;
+}
+
+.header-box__right>h4 {
+  font-size: 24px;
+  line-height: 32px;
+  width: 492px;
+  margin-top: 1.5em;
+  letter-spacing: -0.4px;
+  margin-bottom: 11.375rem;
+  font-weight: 300;
+}
+
+.header-box__right>p {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.header-box__right>p>a {
+  text-decoration: none;
+  color: #000;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+
 }

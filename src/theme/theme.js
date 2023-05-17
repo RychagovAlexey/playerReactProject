@@ -14,8 +14,8 @@ const theme = createTheme({
 			accent: '#F8D231'
 		},
 		text: {
-			primary: '#F5F6F7',
-			secondary: '#000',
+			primary: '#000',
+			secondary: '#F5F6F7',
 			subtitle: '#1B191C',
 		}
 	  },

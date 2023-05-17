@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="stylesheet" href="../src/index.css">
   <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -31,7 +32,25 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="app">
+    <header id="header">
+      <div class="header-box">
+        <div class="header-box__right">
+          <h1>Play any audio sources directly in the browser!</h1>
+          <h4>
+            Without any restrictions for free
+          </h4>
+          <p>By uploading the audio file, you agree to our <a href="/">Terms of Service.</a></p>
+        </div>
+
+        <div class="header-box__left">
+          <div id="root"></div>
+        </div>
+      </div>
+    </header>
+    
+
+  </div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
