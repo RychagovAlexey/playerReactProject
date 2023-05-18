@@ -49,7 +49,7 @@ export default function LinkInput() {
           variant='outlined'
           onChange={inputTextHandler}
           value={localLink}
-          error={errStatus}
+          error={!!errStatus}
           helperText={errStatus ? errStatus : ""}
           sx={{
             "& fieldset": {

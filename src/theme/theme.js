@@ -11,7 +11,8 @@ const theme = createTheme({
 		background: {
 			paper: '#EEEEEE',
 			default: '#1B191C',
-			accent: '#F8D231'
+			accent: '#F8D231',
+			player: '#CFD3D6'
 		},
 		text: {
 			primary: '#000',

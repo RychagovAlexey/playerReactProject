@@ -29,11 +29,13 @@ code {
   margin: 0.75rem;
   display: flex;
 }
+
 .header-box {
   display: flex;
   align-items: center;
-  
+
 }
+
 .header-box__right {
   margin-left: 2.5rem;
 
@@ -70,4 +72,8 @@ code {
   font-weight: 400;
   letter-spacing: -0.3px;
 
+}
+
+.player {
+  display: none;
 }
