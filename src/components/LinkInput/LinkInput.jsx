@@ -1,16 +1,27 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Snackbar,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import arrow from "../../image/arrow.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { addToLinksHistory, setCurrentLink } from "../../store/slice/inputSlice";
+import { useDispatch } from "react-redux";
+import {
+  addToLinksHistory,
+  setCurrentLink,
+} from "../../store/slice/inputSlice";
 
 export default function LinkInput() {
   const [localLink, setLocalLink] = useState("");
   const [errStatus, setErrStatus] = useState("");
-  const currentLink = useSelector((state) => state.link.currentLink);
   const dispatch = useDispatch();
 
-  console.log(localLink);
+  const handleCloseError = () => {
+    setErrStatus("");
+  };
 
   const inputTextHandler = (event) => {
     setLocalLink(event.target.value);
@@ -26,10 +37,10 @@ export default function LinkInput() {
   };
   useEffect(() => {
     setTimeout(() => {
-      setErrStatus('')
-    }, 3000);
-  }, [errStatus])
-  
+      setErrStatus("");
+      return;
+    }, 5000);
+  }, [errStatus]);
 
   return (
     <Box>
@@ -66,10 +77,19 @@ export default function LinkInput() {
             backgroundColor: "#fff",
             width: "32.75rem",
             height: "6rem",
+            "@media (max-width: 568px)": {
+              width: "232px",
+              height: "64px",
+              "& input": {
+                fontSize: "1.5rem",
+                width: "100%",
+                py: "1rem",
+              },
+            },
           }}
         />
         <Button
-        onClick={btnClickHandler}
+          onClick={btnClickHandler}
           variant='contained'
           sx={{
             boxShadow: "none",
@@ -80,11 +100,21 @@ export default function LinkInput() {
               backgroundColor: "background.accent",
               boxShadow: "none",
             },
+            "@media (max-width: 568px)": {
+              width: "64px",
+            },
           }}
         >
           <img src={arrow} />
         </Button>
       </Box>
+      <Snackbar
+        open={!!errStatus}
+        autoHideDuration={6000}
+        onClose={handleCloseError}
+      >
+        <Alert severity='error'>{errStatus}</Alert>
+      </Snackbar>
     </Box>
   );
 }

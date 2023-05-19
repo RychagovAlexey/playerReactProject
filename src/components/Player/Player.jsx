@@ -20,6 +20,7 @@ export default function Player() {
     handleVolumeChange,
     player,
     currentLink,
+    isSongLoaded,
   } = usePlayer();
   return (
     <Box>
@@ -46,7 +47,22 @@ export default function Player() {
           position: "relative",
         }}
       >
-        <LinearProgress color='secondary' />
+        {isSongLoaded ? (
+          ""
+        ) : (
+          <LinearProgress
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left:0,
+              right:0,
+              backgroundColor: "inherit",
+              "& .MuiLinearProgress-bar": {
+                backgroundColor: "#ffffff",
+              },
+            }}
+          />
+         )} 
         <Box ml={"20px"} pt={"20px"}>
           {playerStatus ? (
             <img
