@@ -18,18 +18,9 @@ function changeTab(tabIndex) {
 	if (tabIndex === 0) {
 		amazonInstance.style.display = 'none'
 		ownServer.style.display = 'block'
-
-	//   table.rows[0].style.display = 'table-row';
-	//   table.rows[1].style.display = 'table-row';
-	//   table.rows[2].style.display = 'table-row';
 	} else if (tabIndex === 1) {
 		ownServer.style.display = 'none'
 		amazonInstance.style.display = 'block'
-
-
-	//   table.rows[0].style.display = 'none';
-	//   table.rows[1].style.display = 'none';
-	//   table.rows[2].style.display = 'none';
 	}
   }
   

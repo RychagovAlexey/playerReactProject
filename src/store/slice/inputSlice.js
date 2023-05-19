@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
 	currentLink: '',
-	linksHistory: [],
+	linksHistory: JSON.parse(localStorage.getItem('linksHistory')) || [],
 
 }
 
@@ -17,7 +17,13 @@ export const linkSlice = createSlice({
 			state.currentLink = ''
 		},
 		addToLinksHistory: (state, action) => {
-			state.linksHistory = [...state.linksHistory, action.payload]
+			if(state.linksHistory.includes(action.payload)){
+				const updatedArray = state.linksHistory.filter((element) => element !== action.payload);
+				state.linksHistory = [action.payload, ...updatedArray]
+			} else {
+				state.linksHistory = [action.payload, ...state.linksHistory]
+			}
+			localStorage.setItem('linksHistory', JSON.stringify(state.linksHistory));
 		},
 	},
 })
