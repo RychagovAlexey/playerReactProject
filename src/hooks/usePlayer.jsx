@@ -12,6 +12,8 @@ export default function usePlayer() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isSongLoaded, setisSongLoaded] = useState(false);
+  const [playbackSpeed, setPlaybackSpeed] = useState(1);
+
 
   useEffect(() => {
     setisSongLoaded(false);
@@ -40,6 +42,13 @@ export default function usePlayer() {
       audioElement.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, []);
+
+  const handleSpeedChange = (event, newValue) => {
+    console.log(newValue);
+    const speed = parseFloat(newValue);
+    setPlaybackSpeed(speed);
+    player.current.playbackRate = speed;
+  };
 
   const handleTimeChange = (event, newValue) => {
     const audioElement = player.current;
@@ -81,6 +90,8 @@ export default function usePlayer() {
     handleVolumeChange,
     player,
     currentLink,
-	isSongLoaded
+  isSongLoaded,
+  handleSpeedChange,
+  playbackSpeed
   };
 }

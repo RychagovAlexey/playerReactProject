@@ -6,6 +6,7 @@ import { removeCurrentLink } from "../../store/slice/inputSlice";
 import Pause from "../../image/Pause.svg";
 import Play from "../../image/Play.svg";
 import usePlayer from "../../hooks/usePlayer";
+import PanoramaHorizontalSelectIcon from '@mui/icons-material/PanoramaHorizontalSelect';
 
 export default function Player() {
   const {
@@ -21,6 +22,8 @@ export default function Player() {
     player,
     currentLink,
     isSongLoaded,
+    handleSpeedChange,
+    playbackSpeed
   } = usePlayer();
   return (
     <Box>
@@ -50,20 +53,20 @@ export default function Player() {
         {isSongLoaded ? (
           ""
         ) : (
-          <LinearProgress
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left:0,
-              right:0,
-              backgroundColor: "inherit",
-              "& .MuiLinearProgress-bar": {
-                backgroundColor: "#ffffff",
-              },
-            }}
-          />
-         )} 
-        <Box ml={"20px"} pt={"20px"}>
+            <LinearProgress
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                backgroundColor: "inherit",
+                "& .MuiLinearProgress-bar": {
+                  backgroundColor: "#ffffff",
+                },
+              }}
+            />
+          )}
+        <Box marginX={"20px"} pt={"20px"} display={'flex'} justifyContent={'space-between'}>
           {playerStatus ? (
             <img
               src={Pause}
@@ -72,13 +75,34 @@ export default function Player() {
               alt='Stop Music'
             />
           ) : (
-            <img
-              src={Play}
-              onClick={playerStatusHandler}
-              style={{ cursor: "pointer" }}
-              alt='Play Music'
+              <img
+                src={Play}
+                onClick={playerStatusHandler}
+                style={{ cursor: "pointer" }}
+                alt='Play Music'
+              />
+            )}
+          <Box display={'flex'} width='12rem' alignItems='center' justifyContent='space-between'>
+            <PanoramaHorizontalSelectIcon sx={{ fontSize: '1rem'}} />
+            <Slider
+               id="speed"
+               value={playbackSpeed}
+               min={0.5}
+               max={2}
+               step={0.1}
+               onChange={handleSpeedChange}
+              sx={{
+                width: '6rem',
+                color: "#ADACAD",
+                "& .MuiSlider-thumb": {
+                  backgroundColor: "white",
+                  transition: "0.3s cubic-bezier(.47,1.64,.41,.8)",
+                },
+              }}
             />
-          )}
+            <PanoramaHorizontalSelectIcon />
+
+          </Box>
         </Box>
 
         <Box
