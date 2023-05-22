@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/playerReactProject/static/css/main.b739a15a.css",
+    "main.js": "/playerReactProject/static/js/main.dfdc7dfd.js",
+    "index.html": "/playerReactProject/index.html",
+    "static/media/arrow.svg": "/playerReactProject/static/media/arrow.203be3555b3daccdc899caeb81646d10.svg",
+    "static/media/Pause.svg": "/playerReactProject/static/media/Pause.a2c57db44874202a29ad365b0ef4b497.svg",
+    "static/media/Play.svg": "/playerReactProject/static/media/Play.9e665ded8609d2db8b822407b3ad348e.svg",
+    "main.b739a15a.css.map": "/playerReactProject/static/css/main.b739a15a.css.map",
+    "main.dfdc7dfd.js.map": "/playerReactProject/static/js/main.dfdc7dfd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b739a15a.css",
+    "static/js/main.dfdc7dfd.js"
+  ]
+}
